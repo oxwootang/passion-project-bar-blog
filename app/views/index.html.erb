@@ -1,0 +1,22 @@
+<h1>Welcome to BarK Along!</h1>
+
+<img src="https://www.123freevectors.com/wp-content/uploads/new/animals/370-cartoon-dog-vector-image.png" alt='BarK_mascot' style='width:15%;height:15%'><br>
+
+<h3>What can you use BarK Along! for?</h3>
+<ul>
+  <li>To give a shout out to an awesome bar you found with a spectacular view!</li>
+  <li>Invite others to share the special on margaritas you found at a happy hour!</li>
+  <li>Or to simply flag others about the fire hydrant in the corner that's available for a quick tinkle.</li>
+</ul>
+
+<% if current_user %>
+<% @user = User.find(session[:user_id]) %>
+  <h3>Welcome back, <%=@user.f_name%>! </h3>
+  <form action='/sessions/logout' method='post'>
+    <input type='hidden' name='_method' value='delete'>
+    <input type='submit' value='Sign Out'>
+  </form>
+<% else %>
+  <a href="/users/new">Register New User</a><br>
+  <a href="/sessions/new">Returning User Sign-In</a><br>
+<% end %>
