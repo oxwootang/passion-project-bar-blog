@@ -12,6 +12,7 @@
 <% if current_user %>
 <% @user = User.find(session[:user_id]) %>
   <h3>Welcome back, <%=@user.f_name%>! </h3>
+  <a href="/posts/new">~Bark a new post~</a>
   <form action='/sessions/logout' method='post'>
     <input type='hidden' name='_method' value='delete'>
     <input type='submit' value='Sign Out'>

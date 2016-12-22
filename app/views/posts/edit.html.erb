@@ -1,0 +1,14 @@
+<form action='/posts/<%=@post.id%>' method='post'>
+  <input type='hidden' name='_method' value='put'>
+  <label for='post[title]'>Title: </label>
+  <input type='text' name='post[title]' value='<%=@post.title%>'><br>
+  <label for='post[location]'>Location: </label>
+  <input type='text' name='post[location]' value='<%=@post.location%>'><br>
+  <label for='post[date_of_visit]'>Date: </label>
+  <input type='date' name='post[date_of_visit]' value='<%=@post.date_of_visit%>'><br>
+  <label for='post[time_of_visit]'>Time: </label>
+  <input type='time' name='post[time_of_visit]' value='<%=@post.time_of_visit%>'><br>
+  <input id='new-post' type='submit' value='Bark!'>
+</form>
+
+<textarea name='post[body]' form='bark' value='<%=@post.body%>'></textarea>
