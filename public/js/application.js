@@ -10,7 +10,7 @@ $(document).ready(function() {
 var bindEventHandlers = function(){
   showUserRegistrationForm();
   submitUserRegistrationForm();
-  signInUser();
+  showSignInForm();
 };
 
 var showUserRegistrationForm = function(){
@@ -60,7 +60,7 @@ var submitUserRegistrationForm = function(){
   });
 };
 
-var signInUser = function(){
+var showSignInForm = function(){
   $(".links").on("click", "a", function(e){
     e.preventDefault();
     var signIn = $(this);
