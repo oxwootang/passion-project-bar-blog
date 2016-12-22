@@ -1,6 +1,10 @@
 # get form for returning user sign-in
 get '/sessions/new' do
-  erb :'sessions/new.html'
+  if request.xhr?
+    erb :'/sessions/new.html', layout: false
+  else
+    erb :'sessions/new.html'
+  end
 end
 
 # log-in user if user exists, else return view for log-in page
