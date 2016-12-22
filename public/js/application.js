@@ -4,13 +4,13 @@ $(document).ready(function() {
   // when we try to bind to them
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
-  $(".links").on("click", "#register", function(e){
+  $("a").on("click", function(e){
     e.preventDefault();
-    console.log("The register new user link has been clicked!");
-    console.log($(this));
+    // console.log("The register new user link has been clicked!");
+    // console.log($(this));
     var register = $(this);
     var url = register.attr("href");
-    console.log(url);
+    // console.log(url);
     var method = "GET";
     var request = $.ajax({
       url: url,
@@ -18,7 +18,11 @@ $(document).ready(function() {
     });
     request.done(function(response){
       console.log("Response received");
-      console.log(response);
+      // console.log(response);
+      $('#register').replaceWith(response);
+    });
+    request.fail(function(response){
+      console.log("Response failed");
     });
   });
 });

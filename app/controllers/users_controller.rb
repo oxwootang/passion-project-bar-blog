@@ -8,7 +8,12 @@ end
 # get the form for creating a new user
 # TODO - use jQuery/AJAX to show/display create new user form
 get '/users/new' do
-  erb :'users/new.html' #show new users view
+  if request.xhr?
+    erb :'users/_new_user_form.html', layout: false
+    #show new users view
+  else
+    erb :'users/new.html'
+  end
 end
 
 # create a new user
