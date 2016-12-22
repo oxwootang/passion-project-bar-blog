@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
@@ -18,6 +18,20 @@
   <title></title>
 </head>
 <body>
+<!--   <header>
+<% if current_user %>
+<% @user = User.find(session[:user_id]) %>
+  <h3>Welcome back, <%=@user.f_name%>! </h3>
+  <a href="/posts/new">~Bark a new post~</a>
+  <form action='/sessions/logout' method='post'>
+    <input type='hidden' name='_method' value='delete'>
+    <input type='submit' value='Sign Out'>
+  </form>
+<% else %>
+  <a href="/users/new">Register New User</a><br>
+  <a href="/sessions/new">Returning User Sign-In</a><br>
+<% end %>
+  </header> -->
   <%= yield %>
 </body>
 </html>
